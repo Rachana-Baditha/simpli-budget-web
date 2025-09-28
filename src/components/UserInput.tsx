@@ -1,5 +1,10 @@
 import { useState } from "react";
-import type { Event, UserInputProps } from "../types/allTypes";
+import type { Event, Transaction } from "../types/allTypes";
+
+interface UserInputProps {
+  allTransactions: Transaction[];
+  setAllTransactions: (newTransactions: Transaction[]) => void;
+}
 
 export default function UserInput({
   allTransactions,

@@ -9,9 +9,7 @@ function App() {
   const [tripSpend, setTripSpend] = useState(0);
   const [tripBudget, setTripBudget] = useState(1600);
 
-  const [allTransactions, setAllTransactions] = useState<Array<Transaction>>(
-    []
-  );
+  const [allTransactions, setAllTransactions] = useState([] as Transaction[]);
 
   useEffect(() => {}, []);
 

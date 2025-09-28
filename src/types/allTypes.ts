@@ -1,24 +1,12 @@
-import type { Dispatch, SetStateAction } from "react";
-
-interface Event {
+type Event = {
   target: {
     value: string;
   };
-}
+};
 
-interface Transaction {
+type Transaction = {
   spend: string;
   reason: string;
-}
+};
 
-interface UserInputProps {
-  allTransactions: Transaction[];
-  setAllTransactions: Dispatch<SetStateAction<Array<Transaction>>>;
-}
-
-interface BudetMonitorProps {
-  tripSpend: number;
-  tripBudget: number;
-}
-
-export type { Event, Transaction, UserInputProps, BudetMonitorProps };
+export type { Event, Transaction };
