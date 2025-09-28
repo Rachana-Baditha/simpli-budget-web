@@ -1,19 +1,30 @@
 import { useState } from "react";
+import type { Event, UserInputProps } from "../types/allTypes";
 
-interface Event {
-  target: {
-    value: string;
-  };
-}
-
-export default function UserInput() {
-  const [currentSpend, setCurrentSpeed] = useState("");
+export default function UserInput({
+  allTransactions,
+  setAllTransactions,
+}: UserInputProps) {
+  const [currentSpend, setCurrentSpend] = useState("");
+  const REGEX = /^(\d+\.?\d*)\s?(?:(?:for|at|on)?\s*(.*))?$/g;
+  const checkInput = REGEX.exec(currentSpend);
 
   function handleInput(e: Event) {
-    setCurrentSpeed(e.target.value);
+    setCurrentSpend(e.target.value);
   }
 
-  function handleSubmit() {}
+  function handleSubmit() {
+    let spend: string = "0";
+    let reason: string = "";
+
+    if (checkInput) [spend, reason] = checkInput.slice(1, 3);
+    else console.log("REGEX FAILED");
+
+    let newList = [...allTransactions, { spend: spend, reason: reason }];
+
+    setAllTransactions(newList);
+    setCurrentSpend("");
+  }
 
   return (
     <div>
@@ -23,7 +34,17 @@ export default function UserInput() {
         placeholder="Spend for Reason"
         onChange={handleInput}
       />
-      <input type="button" value=">" />
+      <input
+        type="button"
+        value=">"
+        onClick={handleSubmit}
+        disabled={checkInput == null}
+      />
+      <div>
+        {allTransactions.map((item) => (
+          <div>{item.spend + " " + item.reason}</div>
+        ))}
+      </div>
     </div>
   );
 }

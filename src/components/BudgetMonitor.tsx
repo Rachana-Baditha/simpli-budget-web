@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-
-interface BudetMonitorProps {
-  tripSpend: number;
-  tripBudget: number;
-}
+import type { BudetMonitorProps } from "../types/allTypes";
 
 export default function BudgetMonitor({
   tripSpend,
