@@ -11,7 +11,7 @@ export default function BudgetMonitor({
 }: BudetMonitorProps) {
   return (
     <div>
-      {tripSpend} / {tripBudget}
+      {tripSpend.toFixed(2)} / {tripBudget}
     </div>
   );
 }

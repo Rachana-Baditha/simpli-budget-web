@@ -1,0 +1,9 @@
+.user-input {
+  font-size: large;
+  border: 2px solid;
+  border-radius: 10px;
+}
+
+.user-input:focus {
+  outline: none;
+}

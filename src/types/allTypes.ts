@@ -5,8 +5,9 @@ type Event = {
 };
 
 type Transaction = {
-  spend: string;
+  spend: number;
   reason: string;
+  split: number;
 };
 
 export type { Event, Transaction };
