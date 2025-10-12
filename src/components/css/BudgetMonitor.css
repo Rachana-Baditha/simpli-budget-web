@@ -1,0 +1,14 @@
+.budget-monitor-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 3em;
+  margin-bottom: 2em;
+}
+
+.spend-value {
+  font-size: 48px;
+}
+
+.budget-value {
+  vertical-align: bottom;
+}

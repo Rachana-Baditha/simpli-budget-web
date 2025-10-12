@@ -1,0 +1,43 @@
+.user-input {
+  font-size: 16px;
+  border: none;
+  margin: 0.75em 1.5em;
+  background-color: var(--light-bg);
+}
+
+.user-input:focus {
+  outline: none;
+}
+
+.user-submit-enabled {
+  width: 5em;
+  border: none;
+  border-radius: 50px;
+  border-radius: 0px 5px 5px 0px;
+  background-color: var(--dark-purple);
+  color: var(--light-bg);
+}
+
+.user-submit-disabled {
+  width: 5em;
+  border: none;
+  background-color: var(--dark-purple-desat);
+  border-radius: 50px;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.user-input-container-enabled {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid;
+  border-radius: 10px;
+  border-color: var(--dark-purple);
+}
+
+.user-input-container-disabled {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid;
+  border-radius: 10px;
+  border-color: var(--dark-purple-desat);
+}

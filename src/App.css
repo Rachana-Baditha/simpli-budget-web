@@ -1,7 +1,13 @@
 #root {
   max-width: fit-content;
+  min-width: 80vw;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2em;
   text-align: center;
-  font-size: x-large;
+  font-size: large;
+  /* width: 100%; */
+}
+
+.functionality-container {
+  place-items: center;
 }

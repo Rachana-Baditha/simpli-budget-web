@@ -1,0 +1,12 @@
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-left {
+  display: flex;
+}
+
+.reset-button {
+  padding-left: 1em;
+}

@@ -1,4 +1,5 @@
 // import React, { useState } from "react";
+import "./css/BudgetMonitor.css";
 
 interface BudetMonitorProps {
   tripSpend: number;
@@ -10,8 +11,11 @@ export default function BudgetMonitor({
   tripBudget,
 }: BudetMonitorProps) {
   return (
-    <div>
-      {tripSpend.toFixed(2)} / {tripBudget}
+    <div className="budget-monitor-container">
+      <div className="spend-value">
+        $ {tripSpend % 1 ? tripSpend.toFixed(2) : tripSpend}
+      </div>
+      <div className="budget-value">/ {tripBudget}</div>
     </div>
   );
 }
