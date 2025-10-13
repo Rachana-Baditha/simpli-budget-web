@@ -15,7 +15,7 @@ export default function UserInput({
 }: UserInputProps) {
   const [currentSpend, setCurrentSpend] = useState("");
   const REGEX =
-    /^(\d+\.?\d*(?:(?:\+|-|\*|\\)(?:\d+\.?\d*))*)\s?(?:(?:for|at|on)?\s*(.*))?$/g;
+    /^(\d+\.?\d*(?:\s*(?:\+|-|\*|\\)\s*(?:\d+\.?\d*))*)\s?(?:(?:for|at|on)?\s*(.*))?$/g;
   const checkInput = REGEX.exec(currentSpend);
 
   function capitalizePhrase(phrase: string) {
