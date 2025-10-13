@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import type { Transaction } from "../types/allTypes";
 import TransactionEntry from "./TransactionEntry";
 

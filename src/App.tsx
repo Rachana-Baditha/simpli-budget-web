@@ -15,7 +15,8 @@ const local_transactions: Transaction[] = localStorage.getItem("transactions")
 
 function App() {
   const [tripSpend, setTripSpend] = useState(0);
-  const [tripBudget, setTripBudget] = useState(1600);
+  // const [tripBudget, setTripBudget] = useState(1600);
+  const tripBudget = 1600;
   const [tripCurrency, setTripCurrency] = useState("USD");
   const [allTransactions, setAllTransactions] = useState(local_transactions);
 
@@ -34,7 +35,7 @@ function App() {
   }, [allTransactions]);
 
   return (
-    <>
+    <div className="App">
       <div className="header-container">
         <Header
           title="Amsterdam Trip"
@@ -57,7 +58,7 @@ function App() {
           CURRENCY_LIST={CURRENCY_LIST}
         />
       </div>
-    </>
+    </div>
   );
 }
 
