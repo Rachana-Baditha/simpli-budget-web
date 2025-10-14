@@ -3,6 +3,7 @@
   border: none;
   margin: 0.75em 1.5em;
   background-color: var(--light-bg);
+  color: var(--dark-purple);
 }
 
 .user-input:focus {
