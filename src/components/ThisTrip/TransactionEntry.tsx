@@ -1,7 +1,7 @@
 import { useState } from "react";
-import type { Transaction } from "../types/allTypes";
+import type { Transaction } from "../../types/allTypes";
 import "./css/TransactionStyles.css";
-import { currency_symbol } from "../data/currency_data";
+import { currency_symbol } from "../../data/currency_data";
 
 interface TransactionEntryProps {
   entry: Transaction;

@@ -22,23 +22,22 @@
 .user-submit-disabled {
   width: 5em;
   border: none;
-  background-color: var(--dark-purple-desat);
+  background-color: var(--dark-purple-disable);
   border-radius: 50px;
   border-radius: 0px 5px 5px 0px;
 }
 
-.user-input-container-enabled {
+.user-input-container {
   display: flex;
   justify-content: space-between;
   border: 2px solid;
   border-radius: 10px;
+}
+
+.user-input-container-enabled {
   border-color: var(--dark-purple);
 }
 
 .user-input-container-disabled {
-  display: flex;
-  justify-content: space-between;
-  border: 2px solid;
-  border-radius: 10px;
-  border-color: var(--dark-purple-desat);
+  border-color: var(--dark-purple-disable);
 }

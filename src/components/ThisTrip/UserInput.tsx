@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./css/UserInput.css";
-import type { Event, Transaction } from "../types/allTypes";
+import type { Event, Transaction } from "../../types/allTypes";
 
 interface UserInputProps {
   allTransactions: Transaction[];
@@ -55,11 +55,11 @@ export default function UserInput({
 
   return (
     <div
-      className={
+      className={`user-input-container  + ${
         checkInput == null
           ? "user-input-container-disabled"
           : "user-input-container-enabled"
-      }
+      }`}
     >
       <div className="user-input-bar">
         <input

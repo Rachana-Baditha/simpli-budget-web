@@ -12,4 +12,12 @@ type Transaction = {
   currency: string;
 };
 
-export type { Event, Transaction };
+type Trip = {
+  uid: string;
+  name: string;
+  currency: string;
+  total: number;
+  transactions: Transaction[];
+};
+
+export type { Event, Transaction, Trip };
