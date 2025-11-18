@@ -13,9 +13,9 @@ export default function BudgetMonitor({
   return (
     <div className="budget-monitor-container">
       <div className="spend-value">
-        $ {tripSpend % 1 ? tripSpend.toFixed(2) : tripSpend}
+        ${tripSpend % 1 ? tripSpend.toFixed(2) : tripSpend}
       </div>
-      <div className="budget-value">/ {tripBudget}</div>
+      {/* <div className="budget-value">/ {tripBudget}</div> */}
     </div>
   );
 }

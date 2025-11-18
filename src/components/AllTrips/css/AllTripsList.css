@@ -1,0 +1,6 @@
+.trip-details {
+  display: flex;
+  justify-content: space-between;
+  font-size: large;
+  padding: 0em 0.5em;
+}

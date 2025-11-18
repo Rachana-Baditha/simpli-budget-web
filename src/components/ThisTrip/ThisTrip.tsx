@@ -5,25 +5,22 @@ import BudgetMonitor from "./BudgetMonitor";
 import UserInput from "./UserInput";
 import TransactionList from "./TransactionList";
 import { to_usd } from "../../data/currency_data";
+import type { Trip } from "../../types/allTypes";
 
-const local_transactions: Transaction[] = localStorage.getItem("transactions")
-  ? (JSON.parse(
-      localStorage.getItem("transactions") as string
-    ) as Transaction[])
-  : [];
+interface ThisTripProps {
+  currentTrip: Trip;
+  updateTrip: (updatedTrip: Trip) => void;
+  setCurrentPage: (newPage: string) => void;
+}
 
-function ThisTrip() {
+function ThisTrip({ currentTrip, updateTrip, setCurrentPage }: ThisTripProps) {
   const [tripSpend, setTripSpend] = useState(0);
   // const [tripBudget, setTripBudget] = useState(1600);
   const tripBudget = 1600;
   const [tripCurrency, setTripCurrency] = useState("USD");
-  const [allTransactions, setAllTransactions] = useState(local_transactions);
+  const allTransactions = currentTrip.transactions;
 
   const CURRENCY_LIST = ["USD", "EUR"];
-
-  useEffect(() => {
-    localStorage.setItem("transactions", JSON.stringify(allTransactions));
-  }, [allTransactions]);
 
   useEffect(() => {
     let totalSpend = allTransactions.reduce(
@@ -33,27 +30,35 @@ function ThisTrip() {
     setTripSpend(totalSpend);
   }, [allTransactions]);
 
+  const updateTransactions = (newTransactions: Transaction[]) => {
+    const updatedTrip = { ...currentTrip, transactions: newTransactions };
+    updateTrip(updatedTrip);
+  };
+
+  console.log("CURRENT TRIP IN THIS TRIP:", currentTrip);
+
   return (
     <div className="App">
       <div className="header-container">
         <Header
-          title="Amsterdam Trip"
+          title={currentTrip.name}
           tripCurrency={tripCurrency}
           setTripCurrency={setTripCurrency}
           CURRENCY_LIST={CURRENCY_LIST}
-          setAllTransactions={setAllTransactions}
+          setAllTransactions={updateTransactions}
+          setCurrentPage={setCurrentPage}
         />
       </div>
       <div className="functionality-container">
         <BudgetMonitor tripSpend={tripSpend} tripBudget={tripBudget} />
         <UserInput
           allTransactions={allTransactions}
-          setAllTransactions={setAllTransactions}
+          setAllTransactions={updateTransactions}
           tripCurrency={tripCurrency}
         />
         <TransactionList
           allTransactions={allTransactions}
-          setAllTransactions={setAllTransactions}
+          setAllTransactions={updateTransactions}
           CURRENCY_LIST={CURRENCY_LIST}
         />
       </div>

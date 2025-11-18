@@ -1,0 +1,18 @@
+.new-trip-container {
+  border: 1px solid var(--dark-purple);
+  padding: 1em;
+  align-content: center;
+}
+
+.new-trip-options {
+  display: flex;
+  align-self: center;
+}
+
+.new-trip-name {
+  font-size: large;
+}
+
+.new-trip-item {
+  padding-top: 0.5em;
+}

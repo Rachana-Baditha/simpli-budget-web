@@ -54,7 +54,17 @@ export default function TransactionEntry({
     <div className="entry-container">
       <div className="entry-details" onClick={revealOptions}>
         <div>{entry.reason}</div>
-        <div>{currency_symbol[entry.currency] + String(entry.spend)}</div>
+        <div className="entry-amounts">
+          {entry.split !== 1 && (
+            <div className="entry-amount-item">
+              {String(entry.spend)} / {1 / entry.split}
+            </div>
+          )}
+          <div className="entry-amount-item">
+            {currency_symbol[entry.currency] +
+              String(entry.spend * entry.split)}
+          </div>
+        </div>
       </div>
       {showOptions && (
         <div className="entry-options">

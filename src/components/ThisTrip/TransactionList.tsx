@@ -1,5 +1,5 @@
 // import React, { useState } from "react";
-import type { Transaction } from "../types/allTypes";
+import type { Transaction } from "../../types/allTypes";
 import TransactionEntry from "./TransactionEntry";
 
 interface TransactionListProps {
