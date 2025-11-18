@@ -1,6 +1,5 @@
-import React, { useEffect, type ChangeEvent } from "react";
-import Select from "react-select";
-import type { Event, Trip, Transaction } from "../../types/allTypes";
+import React, { type ChangeEvent } from "react";
+import type { Trip } from "../../types/allTypes";
 import "./css/NewTripInput.css";
 
 interface NewTripInputProps {
@@ -17,11 +16,11 @@ const baseTrip: Trip = {
   transactions: [],
 };
 
-const options = [
-  { value: "USD", label: "USD" },
-  { value: "EUR", label: "EUR" },
-  { value: "INR", label: "INR" },
-];
+// const options = [
+//   { value: "USD", label: "USD" },
+//   { value: "EUR", label: "EUR" },
+//   { value: "INR", label: "INR" },
+// ];
 
 export default function NewTripInput({
   tripList,

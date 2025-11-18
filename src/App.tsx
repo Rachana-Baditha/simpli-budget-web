@@ -1,4 +1,4 @@
-import React, { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ThisTrip from "./components/ThisTrip/ThisTrip";
 import AllTrips from "./components/AllTrips/AllTrips";
 import "./App.css";

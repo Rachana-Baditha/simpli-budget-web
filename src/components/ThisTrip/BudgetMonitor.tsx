@@ -6,10 +6,7 @@ interface BudetMonitorProps {
   tripBudget: number;
 }
 
-export default function BudgetMonitor({
-  tripSpend,
-  tripBudget,
-}: BudetMonitorProps) {
+export default function BudgetMonitor({ tripSpend }: BudetMonitorProps) {
   return (
     <div className="budget-monitor-container">
       <div className="spend-value">

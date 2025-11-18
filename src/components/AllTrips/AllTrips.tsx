@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import type { Trip } from "../../types/allTypes";
 import NewTripInput from "./NewTripInput";
 import TripEntry from "./TripEntry";
