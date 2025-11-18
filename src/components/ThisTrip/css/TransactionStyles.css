@@ -28,6 +28,10 @@
   margin-top: 1em;
 }
 
+.split-label {
+  font-size: small;
+}
+
 .transaction-list-container {
   width: 100%;
   height: 50vh;

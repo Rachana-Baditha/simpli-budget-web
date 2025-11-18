@@ -17,7 +17,7 @@ export default function AllTrips({
     <div className="all-trips-container">
       <NewTripInput tripList={tripList} setTripList={setTripList} />
       {tripList?.length ? (
-        <div>
+        <div className="trips-list-container">
           {tripList.map((trip) => (
             <TripEntry
               key={trip.uid}

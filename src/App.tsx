@@ -39,7 +39,7 @@ function App() {
   }
 
   return (
-    <>
+    <div className="app-container">
       {currentPage == "all-trips" && (
         <AllTrips
           tripList={tripList}
@@ -54,7 +54,7 @@ function App() {
           setCurrentPage={setCurrentPage}
         /> // Pass a default trip to avoid undefined - I hate what i did but bandaid solution
       )}
-    </>
+    </div>
   );
 }
 

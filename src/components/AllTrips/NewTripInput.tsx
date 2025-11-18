@@ -87,12 +87,15 @@ export default function NewTripInput({
           </div>
 
           <div className="new-trip-item">
-            <button onClick={addNewTrip}>Add +</button>
+            <button onClick={() => setExpandInput(false)}>Cancel</button>
+            <button onClick={addNewTrip}>Add Trip</button>
           </div>
         </div>
       ) : (
-        <div>
-          <button onClick={handleExpandInput}>New Trip +</button>
+        <div className="new-trip-button-container">
+          <button className="new-trip-button" onClick={handleExpandInput}>
+            New Trip
+          </button>
         </div>
       )}
     </>

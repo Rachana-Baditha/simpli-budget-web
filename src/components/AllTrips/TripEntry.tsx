@@ -28,9 +28,10 @@ function TripEntry({
     <div className="trip-entry-container">
       <div className="trip-details">
         <div onClick={handleTripClick}>{tripName}</div>
-        <div>
-          ${tripTotal}
+        <div className="trip-details-right">
+          <div className="detail-item">${tripTotal}</div>
           <svg
+            className="detail-item"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 448 512"
             height={20}

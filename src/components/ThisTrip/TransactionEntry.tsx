@@ -56,8 +56,8 @@ export default function TransactionEntry({
         <div>{entry.reason}</div>
         <div className="entry-amounts">
           {entry.split !== 1 && (
-            <div className="entry-amount-item">
-              {String(entry.spend)} / {1 / entry.split}
+            <div className="entry-amount-item split-label">
+              {String(entry.spend)} / {1 / entry.split} =
             </div>
           )}
           <div className="entry-amount-item">

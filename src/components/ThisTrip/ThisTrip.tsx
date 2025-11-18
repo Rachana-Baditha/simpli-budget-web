@@ -7,6 +7,8 @@ import TransactionList from "./TransactionList";
 import { to_usd } from "../../data/currency_data";
 import type { Trip } from "../../types/allTypes";
 
+import "./css/ThisTrip.css";
+
 interface ThisTripProps {
   currentTrip: Trip;
   updateTrip: (updatedTrip: Trip) => void;
@@ -14,7 +16,6 @@ interface ThisTripProps {
 }
 
 function ThisTrip({ currentTrip, updateTrip, setCurrentPage }: ThisTripProps) {
-  const [tripSpend, setTripSpend] = useState(0);
   // const [tripBudget, setTripBudget] = useState(1600);
   const tripBudget = 1600;
   const [tripCurrency, setTripCurrency] = useState("USD");
@@ -27,7 +28,7 @@ function ThisTrip({ currentTrip, updateTrip, setCurrentPage }: ThisTripProps) {
       (acc, curr) => acc + curr.spend * curr.split * to_usd[curr.currency],
       0
     );
-    setTripSpend(totalSpend);
+    setTripTotal(totalSpend);
   }, [allTransactions]);
 
   const updateTransactions = (newTransactions: Transaction[]) => {
@@ -36,6 +37,11 @@ function ThisTrip({ currentTrip, updateTrip, setCurrentPage }: ThisTripProps) {
   };
 
   console.log("CURRENT TRIP IN THIS TRIP:", currentTrip);
+
+  function setTripTotal(total: number) {
+    const updatedTrip = { ...currentTrip, total: total };
+    updateTrip(updatedTrip);
+  }
 
   return (
     <div className="App">
@@ -50,7 +56,7 @@ function ThisTrip({ currentTrip, updateTrip, setCurrentPage }: ThisTripProps) {
         />
       </div>
       <div className="functionality-container">
-        <BudgetMonitor tripSpend={tripSpend} tripBudget={tripBudget} />
+        <BudgetMonitor tripSpend={currentTrip.total} tripBudget={tripBudget} />
         <UserInput
           allTransactions={allTransactions}
           setAllTransactions={updateTransactions}

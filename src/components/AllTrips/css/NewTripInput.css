@@ -16,3 +16,18 @@
 .new-trip-item {
   padding-top: 0.5em;
 }
+
+.new-trip-button-container {
+  display: flex;
+  justify-content: right;
+  padding-right: 1em;
+}
+
+.new-trip-button {
+  background-color: var(--dark-purple);
+  color: white;
+  font-weight: bold;
+  padding: 1em 2em;
+  border-radius: 10px;
+  border: none;
+}

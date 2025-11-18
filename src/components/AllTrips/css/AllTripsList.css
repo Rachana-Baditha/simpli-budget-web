@@ -4,3 +4,19 @@
   font-size: large;
   padding: 0em 0.5em;
 }
+
+.trip-entry-container {
+  color: var(--dark-purple);
+}
+
+.trip-details-right {
+  display: flex;
+}
+
+.trips-list-container {
+  margin-top: 2em;
+}
+
+.detail-item {
+  padding-left: 2em;
+}
