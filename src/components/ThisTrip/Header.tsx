@@ -46,7 +46,6 @@ export default function Header({
           </svg>
         </div>
         <div className="header-title" onClick={toggleReset}>
-          {" "}
           {title}
         </div>
         {showReset && (

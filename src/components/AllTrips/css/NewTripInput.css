@@ -1,7 +1,7 @@
 .new-trip-container {
-  border: 1px solid var(--dark-purple);
-  padding: 1em;
-  align-content: center;
+  border: none;
+  justify-content: center;
+  display: flex;
 }
 
 .new-trip-options {
@@ -30,4 +30,14 @@
   padding: 1em 2em;
   border-radius: 10px;
   border: none;
+}
+
+.trip-input-button {
+  background-color: var(--dark-purple);
+  color: white;
+  font-weight: 400;
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  border: none;
+  margin-left: 1em;
 }

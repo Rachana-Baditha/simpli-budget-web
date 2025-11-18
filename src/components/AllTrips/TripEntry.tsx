@@ -41,6 +41,7 @@ function TripEntry({
           </svg>
         </div>
       </div>
+      <hr className="entry-divider" />
     </div>
   );
 }
